@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Interactive Resume</title>
+</head>
+<body>
+
+    <div id="app">
+        <h1>Interactive Resume</h1>
+        <div class="resume-container">
+            <div class="form-section" id="personalInformationSection">
+                <h2>Personal Information</h2>
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" placeholder="Your Full Name">
+                <!-- Add more fields such as email, phone, etc. -->
+            </div>
+
+            <!-- Box for draggable skills -->
+            <div class="skill-box" id="skillsBox" ondrop="drop(event, 'skillsList')" ondragover="allowDrop(event)">
+                <h2>Skills</h2>
+                <div class="draggable" draggable="true" ondragstart="drag(event, 'JavaScript')">JavaScript</div>
+                <div class="draggable" draggable="true" ondragstart="drag(event, 'HTML5')">HTML5</div>
+                <div class="draggable" draggable="true" ondragstart="drag(event, 'CSS3')">CSS3</div>
+                <div class="draggable" draggable="true" ondragstart="drag(event, 'React.js')">React.js</div>
+                <div class="draggable" draggable="true" ondragstart="drag(event, 'Python')">Python</div>
+                <div class="draggable" draggable="true" ondragstart="drag(event, 'Node.js')">Node.js</div>
+                <div class="draggable" draggable="true" ondragstart="drag(event, 'Git')">Git</div>
+                <div class="draggable" draggable="true" ondragstart="drag(event, 'Responsive Web Design')">Responsive Web Design</div>
+                <!-- Add more skills as needed -->
+            </div>
+
+            <div class="drag-drop-section">
+                <h2>Work Experience</h2>
+                <ul id="workExperienceList" class="droppable" ondrop="drop(event, 'workExperienceList')" ondragover="allowDrop(event)">
+                    <!-- Add fields for work experience that can be dragged and dropped -->
+                    <div class="draggable" draggable="true" ondragstart="drag(event, 'Led a cross-functional team to successfully launch a new e-commerce platform.')">Led a cross-functional team to successfully launch a new e-commerce platform.</div>
+                    <div class="draggable" draggable="true" ondragstart="drag(event, 'Implemented and optimized database structures, improving query performance by 30%.')">Implemented and optimized database structures, improving query performance by 30%.</div>
+                    <div class="draggable" draggable="true" ondragstart="drag(event, 'Collaborated with UX/UI designers to create visually appealing and user-friendly interfaces.')">Collaborated with UX/UI designers to create visually appealing and user-friendly interfaces.</div>
+                    <div class="draggable" draggable="true" ondragstart="drag(event, 'Conducted code reviews and mentored junior developers to enhance team skills.')">Conducted code reviews and mentored junior developers to enhance team skills.</div>
+                    <div class="draggable" draggable="true" ondragstart="drag(event, 'Managed agile development processes, resulting in on-time project delivery.')">Managed agile development processes, resulting in on-time project delivery.</div>
+                    <div class="draggable" draggable="true" ondragstart="drag(event, 'Developed and maintained RESTful APIs to support front-end features.')">Developed and maintained RESTful APIs to support front-end features.</div>
+                    <div class="draggable" draggable="true" ondragstart="drag(event, 'Resolved critical production issues, ensuring minimal downtime and optimal performance.')">Resolved critical production issues, ensuring minimal downtime and optimal performance.</div>
+                    <div class="draggable" draggable="true" ondragstart="drag(event, 'Spearheaded the adoption of modern development tools and best practices within the team.')">Spearheaded the adoption of modern development tools and best practices within the team.</div>
+                    <!-- Add more work experience statements as needed -->
+                </ul>
+            </div>
+
+            <div class="drag-drop-section">
+                <h2>Projects</h2>
+                <ul id="projectsList" class="droppable" ondrop="drop(event, 'projectsList')" ondragover="allowDrop(event)">
+                    <!-- Add fields for projects that can be dragged and dropped -->
+                    <div class="draggable" draggable="true" ondragstart="drag(event, 'E-commerce Website: Designed and developed a full-fledged e-commerce site with secure payment integration.')">E-commerce Website: Designed and developed a full-fledged e-commerce site with secure payment integration.</div>
+                    <div class="draggable" draggable="true" ondragstart="drag(event, 'Task Management App: Created a task management application with real-time collaboration features using Firebase.')">Task Management App: Created a task management application with real-time collaboration features using Firebase.</div>
+                    <div class="draggable" draggable="true" ondragstart="drag(event, 'Portfolio Website: Built a personal portfolio website showcasing skills, projects, and achievements.')">Portfolio Website: Built a personal portfolio website showcasing skills, projects, and achievements.</div>
+                    <div class="draggable" draggable="true" ondragstart="drag(event, 'Blog Platform: Developed a content management system for blogging with user authentication and authorization.')">Blog Platform: Developed a content management system for blogging with user authentication and authorization.</div>
+                    <div class="draggable" draggable="true" ondragstart="drag(event, 'Social Media Dashboard: Implemented a dashboard for tracking social media metrics and analytics.')">Social Media Dashboard: Implemented a dashboard for tracking social media metrics and analytics.</div>
+                    <div class="draggable" draggable="true" ondragstart="drag(event, 'Weather App: Designed a weather application that fetches real-time weather data using a third-party API.')">Weather App: Designed a weather application that fetches real-time weather data using a third-party API.</div>
+                    <div class="draggable" draggable="true" ondragstart="drag(event, 'Online Learning Platform: Led the development of an e-learning platform with video streaming and course tracking.')">Online Learning Platform: Led the development of an e-learning platform with video streaming and course tracking.</div>
+                    <div class="draggable" draggable="true" ondragstart="drag(event, 'Expense Tracker: Built a financial management app to track expenses and generate reports.')">Expense Tracker: Built a financial management app to track expenses and generate reports.</div>
+                    <!-- Add more projects as needed -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</
