@@ -1,0 +1,23 @@
+
+.skill-box {
+    border: 2px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.skill-box h2 {
+    margin-bottom: 10px;
+}
+
+.remove-btn {
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.droppable {
+    min-height: 50px;
+    border: 2px dashed #aaa;
+    border-radius: 5px;
+    padding: 10px;
+}
