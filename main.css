@@ -1,9 +1,13 @@
+
+
 /* main.css */
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'sourcecode', Arial, sans-serif; /* Use the sourcecode font */
     margin: 0;
     padding: 0;
+    background-color: #000; /* Black background */
+    color: #FFA500; /* Orange text color */
 }
 
 #app {
@@ -11,7 +15,7 @@ body {
 }
 
 h1 {
-    color: #007BFF;
+    color: white; /* Change the heading color to white */
 }
 
 .resume-container {
@@ -27,22 +31,29 @@ h1 {
     margin-bottom: 20px;
 }
 
-.form-section, .apply-box, .resume-image, .skill-box, .drag-drop-section {
-    background-color: #fff;
+.form-section,
+.apply-box,
+.resume-image,
+.skill-box,
+.drag-drop-section {
+    background-color: #000; /* Black background */
+    color: #FFA500; /* Orange text color */
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
 }
 
-.form-section, .apply-box, .resume-image {
+.form-section,
+.apply-box,
+.resume-image {
     width: calc(30% - 20px); /* Same width as the skill box */
     height: 120px; /* Adjust the height as needed */
 }
 
 .apply-box button {
-    background-color: #28a745;
-    color: #fff;
+    background-color: #FFA500; /* Orange button background */
+    color: #000; /* Black button text color */
     border: none;
     padding: 5px 10px;
     font-size: 12px;
@@ -51,7 +62,7 @@ h1 {
 }
 
 .apply-box button:hover {
-    background-color: #218838;
+    background-color: #FF8C00; /* Darker orange on hover */
 }
 
 .resume-image img {
@@ -65,29 +76,28 @@ h1 {
 }
 
 .skill-box h2 {
-    color: #007BFF;
+    color: #FFA500; /* Orange heading color */
 }
 
 .draggable {
-    padding: 5px;
-    margin: 3px;
-    background-color: #007BFF;
-    color: #fff;
-    border-radius: 5px;
+    margin: 5px;
+    padding: 8px 12px;
+    background-color: #FFA500; /* Orange background */
+    color: #000; /* Black text color */
+    border-radius: 20px;
     cursor: move;
-    position: relative;
 }
 
 .remove-btn {
-    background-color: #dc3545;
-    color: #fff;
+    background-color: #DC3545; /* Red button background */
+    color: #FFF; /* White button text color */
     border: none;
     padding: 3px;
     cursor: pointer;
 }
 
 .remove-btn:hover {
-    background-color: #bd2130;
+    background-color: #BD2130; /* Darker red on hover */
 }
 
 .drag-drop-section {
@@ -96,7 +106,13 @@ h1 {
 
 .droppable {
     min-height: 30px;
-    border: 2px dashed #aaa;
+    border: 2px dashed #AAA;
     border-radius: 5px;
     padding: 5px;
+}
+
+#workExperienceSection,
+#projectsSection,
+#otherSkillsSection {
+    width: calc(30% - 20px); /* Same width as the skill box */
 }
