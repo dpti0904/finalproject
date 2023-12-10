@@ -149,3 +149,15 @@ h1 {
     width: calc(30% - 20px);
     margin-bottom: 20px; /* Added margin to create space between rows */
 }
+
+#workExperienceSection {
+    order: 2 ; /* Change the order to 3 to move it to the rightmost side */
+}
+
+#projectsSection {
+    order: 3; /* Change the order to 2 to move it to the middle */
+}
+
+#otherSkillsSection {
+    order: 1; /* Change the order to 1 to move it to the leftmost side */
+}
