@@ -1,4 +1,3 @@
-
 <!--
 <!DOCTYPE html>
 <html lang="en">
@@ -131,12 +130,36 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
+
+    <style>
+        /* Add styles for the image modal */
+        #imageModal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+
+        #expandedImage {
+            max-width: 80%;
+            max-height: 80%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
     <title>Interactive Resume</title>
+
 </head>
+
 <body>
 
     <div id="app">
@@ -167,106 +190,147 @@
             </div>
 
             <!-- Resume Image -->
-            <div class="resume-image">
-                <!-- ... (existing code) -->
-                <img src="https://th.bing.com/th?id=OIP.oD-hnuKGUxDN9KUPSsT_vgAAAA&w=219&h=284&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" alt="Resume Image">
+            <div class="resume-image" onclick="expandImage()">
+                <img src="Job.png" alt="Resume Image">
+            </div>
 
+            <!-- Image Modal -->
+            <div id="imageModal" onclick="closeImageModal()">
+                <img id="expandedImage" src="" alt="Expanded Image">
             </div>
 
             <!-- Skills & Experience Boxes -->
             <div class="skills-container">
                 <!-- Skills & Experience Box 1 -->
-                <div class="skill-box" id="skillsBox" ondrop="drop(event, 'workExperienceList')" ondragover="allowDrop(event)">
+                <div class="skill-box" id="skillsBox" ondrop="drop(event, 'workExperienceList')"
+                    ondragover="allowDrop(event)">
                     <!-- ... (existing code) -->
                     <h2>Skills & Experiences</h2>
                     <!-- Add 16 draggable skills without remove buttons -->
                     <div style="display: flex;margin: auto;">
                         <div style="display: flex;flex-direction: column;">
 
-                        <div class="draggable" draggable="true" ondragstart="drag(event, 'Python')">Python</div>
-                        <div class="draggable" draggable="true" ondragstart="drag(event, 'Node.js')">Node.js</div>
-                        <!-- Add 14 more skills -->
-                        <div class="draggable" draggable="true" ondragstart="drag(event, 'React.js')">React.js</div>
-                        <!-- ... (Add more skills as needed) -->
-                        <div class="draggable" draggable="true" ondragstart="drag(event, 'JavaScript')">JavaScript</div>
-                        <!-- Add more skills as needed -->
-                        <div class="draggable" draggable="true" ondragstart="drag(event, 'HTML&CSS')">HTML&CSS</div>
-                        <div class="draggable" draggable="true" ondragstart="drag(event, 'SQL')">SQL</div>
-                    </div>
-                    
-                    <div style="display: flex;flex-direction: column;">
-                        
-                        <div class="draggable" draggable="true" ondragstart="drag(event, 'Database Design')">Database Design</div>
-                        <div class="draggable" draggable="true" ondragstart="drag(event, 'AWS')">AWS</div>
-                        <div class="draggable" draggable="true" ondragstart="drag(event, 'Docker')">Docker</div>
-                        <div class="draggable" draggable="true" ondragstart="drag(event, 'Microsoft Excel')">Microsoft Excel</div>
-                        <div class="draggable" draggable="true" ondragstart="drag(event, 'Data Entry')">Data Entry</div>
-                        <div class="draggable" draggable="true" ondragstart="drag(event, 'Cutomer Service')">Customer Service</div>
-                    </div>
-                    <div style="display: flex;flex-direction: column;">
-                        
-                        <div class="draggable" draggable="true" ondragstart="drag(event, 'MASM')">MASM</div>
+                            <div class="draggable" draggable="true" ondragstart="drag(event, 'Python')">Python</div>
+                            <div class="draggable" draggable="true" ondragstart="drag(event, 'Node.js')">Node.js</div>
+                            <!-- Add 14 more skills -->
+                            <div class="draggable" draggable="true" ondragstart="drag(event, 'React.js')">React.js</div>
+                            <!-- ... (Add more skills as needed) -->
+                            <div class="draggable" draggable="true" ondragstart="drag(event, 'JavaScript')">JavaScript
+                            </div>
+                            <!-- Add more skills as needed -->
+                            <div class="draggable" draggable="true" ondragstart="drag(event, 'HTML&CSS')">HTML&CSS</div>
+                            <div class="draggable" draggable="true" ondragstart="drag(event, 'SQL')">SQL</div>
+                        </div>
 
-                        <div class="draggable" draggable="true" ondragstart="drag(event, 'MATLAB')">MATLAB</div>
-                        <div class="draggable" draggable="true" ondragstart="drag(event, 'Graphic Design')">Graphic Design</div>
-                        <div class="draggable" draggable="true" ondragstart="drag(event, 'Express.js')">Express.js</div>
-                        <div class="draggable" draggable="true" ondragstart="drag(event, 'Apache')">Apache</div>
-                        <div class="draggable" draggable="true" ondragstart="drag(event, 'C#')">C#</div>
+                        <div style="display: flex;flex-direction: column;">
+
+                            <div class="draggable" draggable="true" ondragstart="drag(event, 'Database Design')">
+                                Database Design</div>
+                            <div class="draggable" draggable="true" ondragstart="drag(event, 'AWS')">AWS</div>
+                            <div class="draggable" draggable="true" ondragstart="drag(event, 'Docker')">Docker</div>
+                            <div class="draggable" draggable="true" ondragstart="drag(event, 'Microsoft Excel')">
+                                Microsoft Excel</div>
+                            <div class="draggable" draggable="true" ondragstart="drag(event, 'Data Entry')">Data Entry
+                            </div>
+                            <div class="draggable" draggable="true" ondragstart="drag(event, 'Cutomer Service')">
+                                Customer Service</div>
+                        </div>
+                        <div style="display: flex;flex-direction: column;">
+
+                            <div class="draggable" draggable="true" ondragstart="drag(event, 'MASM')">MASM</div>
+
+                            <div class="draggable" draggable="true" ondragstart="drag(event, 'MATLAB')">MATLAB</div>
+                            <div class="draggable" draggable="true" ondragstart="drag(event, 'Graphic Design')">Graphic
+                                Design</div>
+                            <div class="draggable" draggable="true" ondragstart="drag(event, 'Express.js')">Express.js
+                            </div>
+                            <div class="draggable" draggable="true" ondragstart="drag(event, 'Apache')">Apache</div>
+                            <div class="draggable" draggable="true" ondragstart="drag(event, 'C#')">C#</div>
+                        </div>
                     </div>
-                    </div>
-                        
+
                 </div>
 
                 <!-- Skills & Experience Box 2 -->
-                <div class="skill-box" id="skillsBox2" ondrop="drop(event, 'workExperienceList')" ondragover="allowDrop(event)">
+                <div class="skill-box" id="skillsBox2" ondrop="drop(event, 'workExperienceList')"
+                    ondragover="allowDrop(event)">
                     <!-- Add 10 draggable skills without remove buttons -->
                     <!-- ... (Add more skills as needed) -->
                     <h2>Skills & Experiences 2</h2>
                     <!-- Add 10 draggable skills without remove buttons -->
-                    <div class="draggable" draggable="true" ondragstart="drag(event, 'Project Lead for E-commerce Overhaul')">Project Lead for E-commerce Overhaul</div>
-                   
-    
-                    <div class="draggable" draggable="true" ondragstart="drag(event, 'Data Entry Intern at FedEx')">Data Entry Intern at FedEx</div>
-    
-                    <div class="draggable" draggable="true" ondragstart="drag(event, 'Office Assistant at Mary Coding Camp')">Office Assistant at Mary Coding Camp</div>
-                    <div class="draggable" draggable="true" ondragstart="drag(event, 'Software Engineering Intern at ABC Innovations ')">Software Engineering Intern at ABC Innovations </div>
-                    <div class="draggable" draggable="true" ondragstart="drag(event, 'IT Project Manager at Global Solutions')">IT Project Manager at Global Solutions</div>
-                    <div class="draggable" draggable="true" ondragstart="drag(event, 'Quality Insurance Intern at Intel')">Quality Insurance Intern at Intel</div>
-                    <div class="draggable" draggable="true" ondragstart="drag(event, 'Back-End Developer at DataMinds Co.')">Back-End Developer at DataMinds Co.</div>
-                    <div class="draggable" draggable="true" ondragstart="drag(event, 'Cybersecurity Intern at Ebay')">Cybersecurity Intern at Ebay</div>
-                    <div class="draggable" draggable="true" ondragstart="drag(event, 'Front-End Developer at TechCraft Studios ')">Front-End Developer at TechCraft Studios </div>
+                    <div class="draggable" draggable="true"
+                        ondragstart="drag(event, 'Project Lead for E-commerce Overhaul')">Project Lead for E-commerce
+                        Overhaul</div>
+
+
+                    <div class="draggable" draggable="true" ondragstart="drag(event, 'Data Entry Intern at FedEx')">Data
+                        Entry Intern at FedEx</div>
+
+                    <div class="draggable" draggable="true"
+                        ondragstart="drag(event, 'Office Assistant at Mary Coding Camp')">Office Assistant at Mary
+                        Coding Camp</div>
+                    <div class="draggable" draggable="true"
+                        ondragstart="drag(event, 'Software Engineering Intern at ABC Innovations ')">Software
+                        Engineering Intern at ABC Innovations </div>
+                    <div class="draggable" draggable="true"
+                        ondragstart="drag(event, 'IT Project Manager at Global Solutions')">IT Project Manager at Global
+                        Solutions</div>
+                    <div class="draggable" draggable="true"
+                        ondragstart="drag(event, 'Quality Insurance Intern at Intel')">Quality Insurance Intern at Intel
+                    </div>
+                    <div class="draggable" draggable="true"
+                        ondragstart="drag(event, 'Back-End Developer at DataMinds Co.')">Back-End Developer at DataMinds
+                        Co.</div>
+                    <div class="draggable" draggable="true" ondragstart="drag(event, 'Cybersecurity Intern at Ebay')">
+                        Cybersecurity Intern at Ebay</div>
+                    <div class="draggable" draggable="true"
+                        ondragstart="drag(event, 'Front-End Developer at TechCraft Studios ')">Front-End Developer at
+                        TechCraft Studios </div>
 
                 </div>
 
                 <!-- Skills & Experience Box 3 -->
-                <div class="skill-box" id="skillsBox3" ondrop="drop(event, 'workExperienceList')" ondragover="allowDrop(event)">
+                <div class="skill-box" id="skillsBox3" ondrop="drop(event, 'workExperienceList')"
+                    ondragover="allowDrop(event)">
                     <!-- Add 10 draggable skills without remove buttons -->
                     <!-- ... (Add more skills as needed) -->
                     <h2>Skills & Experiences 3</h2>
                     <!-- Add 10 draggable skills without remove buttons -->
-                    <div class="draggable" draggable="true" ondragstart="drag(event, 'Secure Blogging Platform with Multi-Factor Authentication')">Secure Blogging Platform with Multi-Factor Authentication</div>
-                    <div class="draggable" draggable="true" ondragstart="drag(event, 'Portfolio Website')">Portfolio Website</div>
+                    <div class="draggable" draggable="true"
+                        ondragstart="drag(event, 'Secure Blogging Platform with Multi-Factor Authentication')">Secure
+                        Blogging Platform with Multi-Factor Authentication</div>
+                    <div class="draggable" draggable="true" ondragstart="drag(event, 'Portfolio Website')">Portfolio
+                        Website</div>
                     <!-- ... (Add more skills as needed) -->
-                    <div class="draggable" draggable="true" ondragstart="drag(event, 'Social Media Metrics Dashboard')">Social Media Metrics Dashboard</div>
-                    <div class="draggable" draggable="true" ondragstart="drag(event, 'To Do List App')">To Do List App</div>
-                    <div class="draggable" draggable="true" ondragstart="drag(event, 'AI-Powered Personal Portfolio Optimization ')">AI-Powered Personal Portfolio Optimization </div>
-                    <div class="draggable" draggable="true" ondragstart="drag(event, 'Blockchain-Based Task Management Application')">Blockchain-Based Task Management ApplicationL</div>
+                    <div class="draggable" draggable="true" ondragstart="drag(event, 'Social Media Metrics Dashboard')">
+                        Social Media Metrics Dashboard</div>
+                    <div class="draggable" draggable="true" ondragstart="drag(event, 'To Do List App')">To Do List App
+                    </div>
+                    <div class="draggable" draggable="true"
+                        ondragstart="drag(event, 'AI-Powered Personal Portfolio Optimization ')">AI-Powered Personal
+                        Portfolio Optimization </div>
+                    <div class="draggable" draggable="true"
+                        ondragstart="drag(event, 'Blockchain-Based Task Management Application')">Blockchain-Based Task
+                        Management ApplicationL</div>
                     <!-- Add more skills as needed -->
                 </div>
             </div>
 
             <!-- Boxes for Work Experience, Projects, and Other Skills -->
-            <div class="drag-drop-section" id="workExperienceSection" ondrop="drop(event, 'workExperienceList')" ondragover="allowDrop(event)">
+            <div class="drag-drop-section" id="workExperienceSection" ondrop="drop(event, 'workExperienceList')"
+                ondragover="allowDrop(event)">
                 <h2>Work Experience</h2>
                 <ul id="workExperienceList" class="droppable"></ul>
             </div>
 
-            <div class="drag-drop-section" id="projectsSection" ondrop="drop(event, 'projectsList')" ondragover="allowDrop(event)">
+            <div class="drag-drop-section" id="projectsSection" ondrop="drop(event, 'projectsList')"
+                ondragover="allowDrop(event)">
                 <h2>Projects</h2>
                 <ul id="projectsList" class="droppable"></ul>
             </div>
 
-            <div class="drag-drop-section" id="otherSkillsSection" ondrop="drop(event, 'otherSkillsList')" ondragover="allowDrop(event)">
+            <div class="drag-drop-section" id="otherSkillsSection" ondrop="drop(event, 'otherSkillsList')"
+                ondragover="allowDrop(event)">
                 <h2>Other Skills</h2>
                 <ul id="otherSkillsList" class="droppable"></ul>
             </div>
@@ -274,6 +338,25 @@
     </div>
 
     <script src="main.js"></script>
-    
+
+    <script>
+        // Function to expand the image and show the modal
+        function expandImage() {
+            var modal = document.getElementById("imageModal");
+            var image = document.getElementById("expandedImage");
+            var originalImage = document.querySelector(".resume-image img");
+
+            image.src = originalImage.src;
+            modal.style.display = "flex";
+        }
+
+        // Function to close the image modal
+        function closeImageModal() {
+            var modal = document.getElementById("imageModal");
+            modal.style.display = "none";
+        }
+    </script>
+
 </body>
+
 </html>
