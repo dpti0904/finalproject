@@ -170,6 +170,7 @@
             <div class="resume-image">
                 <!-- ... (existing code) -->
                 <img src="https://th.bing.com/th?id=OIP.oD-hnuKGUxDN9KUPSsT_vgAAAA&w=219&h=284&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" alt="Resume Image">
+
             </div>
 
             <!-- Skills & Experience Boxes -->
@@ -179,28 +180,41 @@
                     <!-- ... (existing code) -->
                     <h2>Skills & Experiences</h2>
                     <!-- Add 16 draggable skills without remove buttons -->
-                    <div class="draggable" draggable="true" ondragstart="drag(event, 'Python')">Python</div>
-                    <div class="draggable" draggable="true" ondragstart="drag(event, 'Node.js')">Node.js</div>
-                    <!-- Add 14 more skills -->
-                    <div class="draggable" draggable="true" ondragstart="drag(event, 'React.js')">React.js</div>
-                    <!-- ... (Add more skills as needed) -->
-                    <div class="draggable" draggable="true" ondragstart="drag(event, 'JavaScript')">JavaScript</div>
-                    <!-- Add more skills as needed -->
-                    <div class="draggable" draggable="true" ondragstart="drag(event, 'HTML&CSS')">HTML&CSS</div>
-                    <div class="draggable" draggable="true" ondragstart="drag(event, 'SQL')">SQL</div>
-                    <div class="draggable" draggable="true" ondragstart="drag(event, 'Database Design')">Database Design</div>
-                    <div class="draggable" draggable="true" ondragstart="drag(event, 'AWS')">AWS</div>
-                    <div class="draggable" draggable="true" ondragstart="drag(event, 'Docker')">Docker</div>
-                    <div class="draggable" draggable="true" ondragstart="drag(event, 'Microsoft Excel')">Microsoft Excel</div>
-                    <div class="draggable" draggable="true" ondragstart="drag(event, 'Data Entry')">Data Entry</div>
-                    <div class="draggable" draggable="true" ondragstart="drag(event, 'Cutomer Service')">Customer Service</div>
-                    <div class="draggable" draggable="true" ondragstart="drag(event, 'MASM')">MASM</div>
-                    <div class="draggable" draggable="true" ondragstart="drag(event, 'MATLAB')">MATLAB</div>
-                    <div class="draggable" draggable="true" ondragstart="drag(event, 'Graphic Design')">Graphic Design</div>
-                    <div class="draggable" draggable="true" ondragstart="drag(event, 'Express.js')">Express.js</div>
-                    <div class="draggable" draggable="true" ondragstart="drag(event, 'Apache')">Apache</div>
-                    <div class="draggable" draggable="true" ondragstart="drag(event, 'C#')">C#</div>
-    
+                    <div style="display: flex;margin: auto;">
+                        <div style="display: flex;flex-direction: column;">
+
+                        <div class="draggable" draggable="true" ondragstart="drag(event, 'Python')">Python</div>
+                        <div class="draggable" draggable="true" ondragstart="drag(event, 'Node.js')">Node.js</div>
+                        <!-- Add 14 more skills -->
+                        <div class="draggable" draggable="true" ondragstart="drag(event, 'React.js')">React.js</div>
+                        <!-- ... (Add more skills as needed) -->
+                        <div class="draggable" draggable="true" ondragstart="drag(event, 'JavaScript')">JavaScript</div>
+                        <!-- Add more skills as needed -->
+                        <div class="draggable" draggable="true" ondragstart="drag(event, 'HTML&CSS')">HTML&CSS</div>
+                        <div class="draggable" draggable="true" ondragstart="drag(event, 'SQL')">SQL</div>
+                    </div>
+                    
+                    <div style="display: flex;flex-direction: column;">
+                        
+                        <div class="draggable" draggable="true" ondragstart="drag(event, 'Database Design')">Database Design</div>
+                        <div class="draggable" draggable="true" ondragstart="drag(event, 'AWS')">AWS</div>
+                        <div class="draggable" draggable="true" ondragstart="drag(event, 'Docker')">Docker</div>
+                        <div class="draggable" draggable="true" ondragstart="drag(event, 'Microsoft Excel')">Microsoft Excel</div>
+                        <div class="draggable" draggable="true" ondragstart="drag(event, 'Data Entry')">Data Entry</div>
+                        <div class="draggable" draggable="true" ondragstart="drag(event, 'Cutomer Service')">Customer Service</div>
+                    </div>
+                    <div style="display: flex;flex-direction: column;">
+                        
+                        <div class="draggable" draggable="true" ondragstart="drag(event, 'MASM')">MASM</div>
+
+                        <div class="draggable" draggable="true" ondragstart="drag(event, 'MATLAB')">MATLAB</div>
+                        <div class="draggable" draggable="true" ondragstart="drag(event, 'Graphic Design')">Graphic Design</div>
+                        <div class="draggable" draggable="true" ondragstart="drag(event, 'Express.js')">Express.js</div>
+                        <div class="draggable" draggable="true" ondragstart="drag(event, 'Apache')">Apache</div>
+                        <div class="draggable" draggable="true" ondragstart="drag(event, 'C#')">C#</div>
+                    </div>
+                    </div>
+                        
                 </div>
 
                 <!-- Skills & Experience Box 2 -->
@@ -260,5 +274,6 @@
     </div>
 
     <script src="main.js"></script>
+    
 </body>
 </html>
