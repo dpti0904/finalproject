@@ -27,6 +27,7 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
     </style>
+
     <title>Interactive Resume</title>
 
 </head>
@@ -37,7 +38,8 @@
         <h1>Interactive Resume</h1>
         <div class="resume-container">
             <div class="form-section" id="personalInformationSection">
-                <!-- ... (existing code) -->
+                
+                <!-- Personal info Box -->
                 <h2>Personal Information</h2>
                 <div class="personal-info">
                     <label for="fullName">Full Name:</label>
@@ -61,7 +63,9 @@
             </div>
 
             <!-- Resume Image -->
+            
             <div class="resume-image" onclick="expandImage()">
+                <h2>Other Skills</h2>
                 <img src="Job.png" alt="Resume Image">
             </div>
 
@@ -75,20 +79,20 @@
                 <!-- Skills & Experience Box 1 -->
                 <div class="skill-box" id="skillsBox" ondrop="drop(event, 'workExperienceList')"
                     ondragover="allowDrop(event)">
-                    <!-- ... (existing code) -->
-                    <h2>Skills & Experiences</h2>
+        
+                    <h2>Other Skills</h2>
                     <!-- Add 16 draggable skills without remove buttons -->
                     <div style="display: flex;margin: auto;">
                         <div style="display: flex;flex-direction: column;">
 
                             <div class="draggable" draggable="true" ondragstart="drag(event, 'Python')">Python</div>
                             <div class="draggable" draggable="true" ondragstart="drag(event, 'Node.js')">Node.js</div>
-                            <!-- Add 14 more skills -->
+                           
                             <div class="draggable" draggable="true" ondragstart="drag(event, 'React.js')">React.js</div>
-                            <!-- ... (Add more skills as needed) -->
+                          
                             <div class="draggable" draggable="true" ondragstart="drag(event, 'JavaScript')">JavaScript
                             </div>
-                            <!-- Add more skills as needed -->
+                            
                             <div class="draggable" draggable="true" ondragstart="drag(event, 'HTML&CSS')">HTML&CSS</div>
                             <div class="draggable" draggable="true" ondragstart="drag(event, 'SQL')">SQL</div>
                         </div>
@@ -126,9 +130,9 @@
                 <div class="skill-box" id="skillsBox2" ondrop="drop(event, 'workExperienceList')"
                     ondragover="allowDrop(event)">
                     <!-- Add 10 draggable skills without remove buttons -->
-                    <!-- ... (Add more skills as needed) -->
-                    <h2>Skills & Experiences 2</h2>
-                    <!-- Add 10 draggable skills without remove buttons -->
+                    
+                    <h2>Work Experiences</h2>
+                  
                     <div class="draggable" draggable="true"
                         ondragstart="drag(event, 'Project Lead for E-commerce Overhaul')">Project Lead for E-commerce
                         Overhaul</div>
@@ -164,15 +168,15 @@
                 <div class="skill-box" id="skillsBox3" ondrop="drop(event, 'workExperienceList')"
                     ondragover="allowDrop(event)">
                     <!-- Add 10 draggable skills without remove buttons -->
-                    <!-- ... (Add more skills as needed) -->
-                    <h2>Skills & Experiences 3</h2>
-                    <!-- Add 10 draggable skills without remove buttons -->
+                   
+                    <h2>Projects</h2>
+                   
                     <div class="draggable" draggable="true"
                         ondragstart="drag(event, 'Secure Blogging Platform with Multi-Factor Authentication')">Secure
                         Blogging Platform with Multi-Factor Authentication</div>
                     <div class="draggable" draggable="true" ondragstart="drag(event, 'Portfolio Website')">Portfolio
                         Website</div>
-                    <!-- ... (Add more skills as needed) -->
+                   
                     <div class="draggable" draggable="true" ondragstart="drag(event, 'Social Media Metrics Dashboard')">
                         Social Media Metrics Dashboard</div>
                     <div class="draggable" draggable="true" ondragstart="drag(event, 'To Do List App')">To Do List App
@@ -183,14 +187,14 @@
                     <div class="draggable" draggable="true"
                         ondragstart="drag(event, 'Blockchain-Based Task Management Application')">Blockchain-Based Task
                         Management ApplicationL</div>
-                    <!-- Add more skills as needed -->
+                 
                 </div>
             </div>
 
             <!-- Boxes for Work Experience, Projects, and Other Skills -->
             <div class="drag-drop-section" id="workExperienceSection" ondrop="drop(event, 'workExperienceList')"
                 ondragover="allowDrop(event)">
-                <h2>Work Experience</h2>
+                <h2>Work Experiences</h2>
                 <ul id="workExperienceList" class="droppable"></ul>
             </div>
 

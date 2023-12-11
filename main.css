@@ -15,7 +15,7 @@ body {
 }
 
 h1 {
-    color: white; /* Change the heading color to white */
+    color: orange; /* Change the heading color to white */
 }
 
 .resume-container {
@@ -24,14 +24,11 @@ h1 {
     justify-content: space-between;
 }
 
-/*
-.skills-container {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin-bottom: 20px;
+
+.personal-info {
+    margin-bottom: 10px; /* Add margin between personal information items */
 }
-*/
+
 
 .form-section,
 .apply-box,
@@ -46,11 +43,15 @@ h1 {
     margin-bottom: 20px;
 }
 
-.form-section,
 .apply-box,
 .resume-image {
     width: calc(30% - 20px); /* Same width as the skill box */
-    height: 120px; /* Adjust the height as needed */
+    height: 110px; 
+}
+
+.form-section{
+    width: calc(30% - 20px); /* Same width as the skill box */
+    height: auto; 
 }
 
 .apply-box button {
@@ -73,11 +74,6 @@ h1 {
     border-radius: 5px;
 }
 
-/*
-.skill-box {
-    width: calc(30% - 20px);
-}
-*/
 
 .skill-box h2 {
     color: #FFA500; /* Orange heading color */
@@ -151,13 +147,13 @@ h1 {
 }
 
 #workExperienceSection {
-    order: 2 ; /* Change the order to 3 to move it to the rightmost side */
+    order: 2 ; 
 }
 
 #projectsSection {
-    order: 3; /* Change the order to 2 to move it to the middle */
+    order: 3;
 }
 
 #otherSkillsSection {
-    order: 1; /* Change the order to 1 to move it to the leftmost side */
+    order: 1; 
 }
