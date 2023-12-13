@@ -4,15 +4,25 @@ let skills2Count = 0;
 let skills3Count = 0;
 
 // Arrays for good and bad skills
+// Arrays for good, bad, and okay skills
 const goodSkills1 = ["node.js", "python", "javascript", "html & css", "REACT", "SQL", "Database design", "Express.js", "Apache", "AWS", "Docker"];
-const badSkills1 = ["Microsoft Excel", "C#", "Data Entry", "Customer Service", "MASM", "MATLAB"];
+const badSkills1 = ["Microsoft Excel", "Graphic Design", "Data Entry"];
+const okaySkills1 = ["Apache", "MASM", "C#", "Customer Service", "MATLAB"];
 
-const goodSkills2 = ["Project Lead for E-commerce Overhaul", "Software Engineering Intern at ABC Innovations", "IT Project Manager at Global Solutions", "Back-End Developer at DataMinds Co.", "Front-End Developer at TechCraft Studios"];
-const badSkills2 = ["Data Entry Intern at FedEx", "Office Assistant at Mary's Coding Camp", "Quality Insurance Intern at Intel", "Cybersecurity Lead at Ebay"];
+const goodSkills2 = ["Software Engineering Intern at ABC Innovations", "IT Project Manager at Global Solutions", "Front-End Developer Intern at TechCraft Studios", "Teaching Assistant at Mary's Coding Camp", "Quality Assurance Part-Time Intern at Intel", "Google Cybersecurity Certification"];
+const badSkills2 = ["Data Entry Summer Job at FedEx", "Volunteer for E-commerce Overhaul", "Barista at Starbucks"];
+const okaySkills2 = []; // No specified okay skills for category 2
 
-const goodSkills3 = ["Secure Blogging Platform with Multi-Factor Authentication", "AI-Powered Personal Portfolio Optimization", "Blockchain-Based Task Management Application"];
-const badSkills3 = ["Portfolio Website", "To Do List App", "Social Media Metrics Dashboard"];
+const goodSkills3 = ["Secure Blogging Platform with Multi-Factor Authentication using Firebase", "Portfolio Website using React", "Social Media Metrics Dashboard","Metadata Search Application using Spotify and Genius APIgit " ];
+const badSkills3 = ["Customer Service Spreadsheet", "To Do List App", "Entrepreneurial Mindset Vlog Channel on Youtube"];
+const okaySkills3 = []; // No specified okay skills for category 3
 
+// Point system
+const pointSystem = {
+    goodSkill: 1, // Points for each good skill
+    badSkill: 0, // Points for each bad skill
+    okaySkill: 0.5, // Points for each okay skill
+};
 
 
 
@@ -29,7 +39,7 @@ function drop(event, targetId) {
     var data = event.dataTransfer.getData("text");
 
     // Check the targetId to determine the destination box
-    if (targetId === "otherSkillsList" && skillsCount < 7) {
+    if (targetId === "otherSkillsList" && skillsCount < 9) {
         addToBox(data, targetId);
         skillsCount++;
     } else if (targetId === "workExperienceList" && skills2Count < 6) {
@@ -67,15 +77,17 @@ function addToBox(data, targetId) {
 }
 
 
-function calculatePoints(goodSkills, badSkills, userSkills) {
+function calculatePoints(goodSkills, badSkills, okaySkills, userSkills) {
     let overallPoints = 0;
 
     userSkills.forEach(skill => {
         const lowercaseSkill = skill.toLowerCase();
         if (goodSkills.map(s => s.toLowerCase()).includes(lowercaseSkill)) {
-            overallPoints++;
+            overallPoints += pointSystem.goodSkill;
         } else if (badSkills.map(s => s.toLowerCase()).includes(lowercaseSkill)) {
             // No points deducted for bad skills
+        } else if (okaySkills.map(s => s.toLowerCase()).includes(lowercaseSkill)) {
+            overallPoints += pointSystem.okaySkill;
         } else {
             console.log(`Unknown skill: ${skill}`);
         }
@@ -94,11 +106,11 @@ function checkInterviewOffer() {
     const otherSkills = getSkillsFromList("otherSkillsList");
     const projectsSkills = getSkillsFromList("projectsList");
 
-    const overallPoints1 = calculatePoints(goodSkills1, badSkills1, otherSkills);
-    const overallPoints2 = calculatePoints(goodSkills2, badSkills2, workExperienceSkills);
-    const overallPoints3 = calculatePoints(goodSkills3, badSkills3, projectsSkills);
+    const overallPoints1 = calculatePoints(goodSkills1, badSkills1, okaySkills1, otherSkills);
+    const overallPoints2 = calculatePoints(goodSkills2, badSkills2, okaySkills2, workExperienceSkills);
+    const overallPoints3 = calculatePoints(goodSkills3, badSkills3, okaySkills3, projectsSkills);
 
-    const hasInterviewOffer = overallPoints1 >= 4 && overallPoints2 >= 3 && overallPoints3 >= 3;
+    const hasInterviewOffer = overallPoints1 >= 5 && overallPoints2 >= 3 && overallPoints3 >= 3;
 
     redirectToNextPage(hasInterviewOffer);
 }
