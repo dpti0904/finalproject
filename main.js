@@ -4,10 +4,9 @@ let skills2Count = 0;
 let skills3Count = 0;
 
 // Arrays for good and bad skills
-// Arrays for good, bad, and okay skills
 const goodSkills1 = ["node.js", "python", "javascript", "html & css", "REACT", "SQL", "Database design", "Express.js", "AWS", "Docker"];
 const badSkills1 = ["Microsoft Excel", "Graphic Design", "Data Entry","Apache", "MASM", "C#", "Customer Service", "MATLAB"];
-//const okaySkills1 = ["Apache", "MASM", "C#", "Customer Service", "MATLAB"];
+
 
 const goodSkills2 = ["Software Engineering Intern at ABC Innovations", "IT Project Manager at Global Solutions", "Front-End Developer Intern at TechCraft Studios", "Teaching Assistant at Mary Coding Camp", "Quality Assurance Part-Time Intern at Intel", "Google Cybersecurity Certification"];
 const badSkills2 = ["Data Entry Summer Job at FedEx", "Volunteer for E-commerce Overhaul", "Barista at Starbucks"];
